@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const arr=[5,7,42,1,0,4,24,6];
+
+    function evenNum(num){
+         if(num%2==0) 
+         return num;
+    }
+    //filter method filters all the even numbers and return each even number to new array
+    const filterArr = arr.filter(evenNum);
+    document.write(filterArr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3 {
+            color: blue;
+            background-color: aliceblue;
+            border: 5px;
+            width: 125px;
+        }
+
+        #hovering:hover {
+            color: aliceblue;
+            background-color: blue;
+            border: 5px;
+            border-radius: 2px;
+            width: 125px;
+        }
+    </style>
+</head>
+<body>
+    <div id="elem">
+        <h1 onclick='this.innerHTML="hi"'>Hello!!</h1>
+        <p id="paragraph">Hello</p>
+    </div>
+    <input type="text" id="btn" onmouseenter="inputText()" value="Type Anything">
+    <button type="button" onclick="this.innerHTML='now double click'" ondblclick="visble()">CLICK ON ME</button><br><br>
+    <button type="button" id="btn1" style="display:none ;" onclick="inputText1()" >Now click me</button>
+
+    <p id="demo" ondblclick="displayDate()" onmouseenter="this.innerHTML='Double click on me to Display the date.'"></p>
+    <h3 id="hovering" onmouseover="this.innerHTML='thank you'" onmouseleave="this.innerHTML= 'Hover on me'">Hover on me</h3>
+
+
+    <script>
+        //document.getElementsByTagName("h1")[0].innerHTML="Empty!!";
+
+        function inputText(){
+            let text = document.getElementById("demo");
+            text.innerHTML="Type Fast!!!";
+        }
+        function inputText1(){
+            let text = document.getElementById("demo");
+            text.innerHTML="Type Fast man what r u doing!!!";
+        }
+
+        function visble(){
+            document.getElementById("btn1").style.display="block";
+        }
+
+        function hi(){
+        let x=document.getElementById("demo");
+        x.innerHTML="hi";
+        }
+
+        displayDate = () =>{ document.getElementById("demo").innerHTML= Date()};
+
+        const para = document.createElement("p");
+        const node = document.createTextNode("Hello again!!");
+        para.appendChild(node);
+
+        const parent=document.getElementById("elem");
+        const child=document.getElementById("paragraph");
+        parent.replaceChild(para,child);
+
+    </script>
+    
+</body>
+</html>

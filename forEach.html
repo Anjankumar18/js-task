@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+</head>
+<body>
+    <script>
+    const num = [34,56,464,243,4646,464,4];
+    let sum = 0;
+
+    //forEach method calls a function for each element in an array
+    num.forEach(sumOfArr);
+    
+    function sumOfArr(value) {
+     sum += value;
+    }
+
+    document.write("Sum of Numbers in Array is : " + sum);
+    </script>
+</body>
+</html>

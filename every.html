@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr=[3,5,1,6,7];
+
+        //every method calls a function for each element and returns true if the function returns true for all elements
+        //and returns false if the function returns false for one element.
+        const newArr=arr.every(odd);
+
+        function odd(num){
+            return num % 2 == 1;
+        }
+
+        document.write(newArr);
+    </script>
+</body>
+</html>
