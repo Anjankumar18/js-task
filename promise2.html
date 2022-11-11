@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>async and await</h1>
+    <p>if rejected then nothing is displayed after submitting <br>because it awaits for a resolved function</p>
+    
+    <p >Enter "resolve" </p>
+    
+    <input type="text" id="res">
+    
+    <button type="submit" onclick="myDisplay()">submit</button>
+    
+    <h3  id="demo"></h3>
+
+<script>
+
+async function myDisplay() {
+  
+    let myPromise = new Promise(function(resolve,reject) {
+    
+    var val=document.getElementById("res").value;
+
+    setTimeout(function() {
+
+        if (val==="resolve") {
+            resolve("resolved");
+        }else
+            reject("rejected");
+    ;}, 1000);
+  });
+
+  document.getElementById("demo").innerHTML = await myPromise;
+}
+</script>
+
+</body>
+</html>
