@@ -9,14 +9,14 @@
 <body>
     <script>
         //prototyoe allows us to add new method and properties 
-    Array.prototype.Lcase = function() {
-    for (let i = 0; i < this.length; i++) {
-        this[i] = this[i].toLowerCase();
-    }
+    Array.prototype.revSort = function() {
+        this.sort(function(a, b){return a - b});
+        this.reverse();
+    
     };
 
-    const arr = ["Audi","BeNz","JaGuar","PorscHe","BEnz","BMW"];
-    arr.Lcase();
+    const arr = [4,6,7,9,3,1,200,100];
+    arr.revSort();
     document.write(arr);
 
     </script>
