@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Check Whether you are Eligible to vote or Not</h3>
+    <div>
+        Enter your age :<input type="number" max="150" min="1" id="num">
+        <button type="submit" onclick="ageCheck()">Check</button>  
+    </div>
+    <h5 id="display"></h5>
+<script>
+function ageCheck(){
+
+    let ageProm = new Promise(function(ageResolve, ageReject) {
+    let age = document.getElementById("num").value;
+
+        if (age >= 18 && age <= 150)
+            ageResolve("Eligible to vote.");
+        else{
+            if (age < 18 && age > 0) 
+                ageReject("Not Eligible to vote!"); 
+            else
+                ageReject("Enter Valid Age!");
+        }
+    });
+
+    ageProm.then(
+    function(value) {document.getElementById("display").innerHTML=value},
+    function(error) {document.getElementById("display").innerHTML=error}
+    );  
+}      
+</script>
+</body>
+</html>
